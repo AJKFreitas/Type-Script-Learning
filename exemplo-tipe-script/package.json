@@ -18,5 +18,8 @@
   "homepage": "https://github.com/AJKFreitas/Type-Script-Learning#readme",
   "dependencies": {
     "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.74"
   }
 }
