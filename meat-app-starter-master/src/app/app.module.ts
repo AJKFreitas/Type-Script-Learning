@@ -4,12 +4,17 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 
-import { AppComponent } from './app.component'
+import { AppComponent } from './app.component';
+import { HeaderComponent } from "app/header/header.component";
+import { HomeComponent } from "app/home/home.component";
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,
