@@ -17,14 +17,22 @@ import { RestaurantsComponent } from 'app/restaurants/restaurants.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
+<<<<<<< HEAD
     AboutComponent,
     RestaurantsComponent
 
+=======
+    AboutComponent
+>>>>>>> 67a00ed228897c4885511c0b3fc18b3b128e45ac
   ],
   imports: [
     BrowserModule,
     HttpModule,
+<<<<<<< HEAD
     RouterModule.forRoot(ROUTES)
+=======
+    RouterModule
+>>>>>>> 67a00ed228897c4885511c0b3fc18b3b128e45ac
   ],
   providers: [],
   bootstrap: [AppComponent]
