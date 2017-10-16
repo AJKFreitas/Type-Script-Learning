@@ -26,4 +26,9 @@ export class RestaurantDetailComponent implements OnInit {
   getParamSnapshot():string{
     return this.route.snapshot.params['id'];
   }
+
+  getParamParentSnapshot():string{
+    return this.route.parent.snapshot.params['restaurantId'];
+  }
+
 }
