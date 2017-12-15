@@ -1,7 +1,7 @@
 import { MenuItem } from "app/restaurant-detail/menu-item/menu.item.model";
 
 export class CartItem{
-    constructor(private menuItem: MenuItem, private quatity:number =1){
+    constructor(public menuItem: MenuItem, public quatity:number =1){
 
     }
     value(){
