@@ -1,3 +1,4 @@
+import { InputComponent } from 'app/shared/input/input.component';
 import { OrderComponent } from './order/order.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,LOCALE_ID } from '@angular/core';
@@ -34,7 +35,8 @@ import { ShoppingCartService } from 'app/restaurant-detail/shopping-cart/shoppin
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderComponent
+    OrderComponent,
+    InputComponent
 
   ],
   imports: [
