@@ -34,19 +34,18 @@
                   <input type="text" class="form-control" id="inputSuccess" placeholder="Complemento" name="optional" ngModel>
                     </mt-input-container>
               </div>
-              <!-- /.col -->
             </div>
-            <!-- /.row -->
 
-            <!-- Table row -->
             <div class="row">
               <div class="col-xs-12">
                 <p class="lead">Itens do Pedido:</p>
               </div>
-             <mt-order-itens></mt-order-itens>
-              <!-- /.col -->
+             <mt-order-itens [itens]="cartItens()"
+                    (increaseQty)="increaseQty($event)"
+                    (decreaseQty)="decreaseQty($event)"
+                    (remove)="remove($event)">
+              </mt-order-itens>
             </div>
-            <!-- /.row -->
 
             <div class="row">
               <!-- accepted payments column -->
@@ -62,22 +61,7 @@
               <div class="col-sm-6 col-xs-12">
                 <p class="lead">Frete e Total:</p>
 
-                <div class="table-responsive">
-                  <table class="table">
-                    <tbody><tr>
-                      <th style="width:50%">Itens:</th>
-                      <td class="text-right">R$ 20,00</td>
-                    </tr>
-                    <tr>
-                      <th>Frete:</th>
-                      <td class="text-right">R$ 8,00</td>
-                    </tr>
-                    <tr>
-                      <th>Total:</th>
-                      <td class="text-right">R$ 28,00</td>
-                    </tr>
-                  </tbody></table>
-                </div>
+                <mt-delivery-costs></mt-delivery-costs>
               </div>
               <!-- /.col -->
             </div>
