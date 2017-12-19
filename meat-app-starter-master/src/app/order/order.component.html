@@ -3,9 +3,6 @@
 
   <section class="content">
     <section class="invoice">
-
-        {{form.value | json}}
-
           <form #form="ngForm" novalidate>
             <div class="row">
               <div class="col-xs-12">
@@ -21,17 +18,17 @@
               </div>
               <div class="col-sm-6 col-xs-12">
                <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
-                  <input type="text" class="form-control" id="inputSuccess" placeholder="Endereço" required minlength="5" name="address" ngModel >
+                  <input type="text" class="form-control"  placeholder="Endereço" required minlength="5" name="address" ngModel >
                </mt-input-container>
               </div>
               <div class="col-sm-3 col-xs-6">
               <mt-input-container errorMessage="Campo obrigatório! Somente números" label="Número">
-                    <input type="text" class="form-control" id="inputSuccess" placeholder="Número" pattern="^[0-9]*$" required minlength="1" name="number" ngModel>
+                    <input type="text" class="form-control"  placeholder="Número" pattern="^[0-9]*$" required minlength="1" name="number" ngModel>
               </mt-input-container>
               </div>
               <div class="col-sm-4 col-xs-6">
                     <mt-input-container label=" Complemento">
-                  <input type="text" class="form-control" id="inputSuccess" placeholder="Complemento" name="optional" ngModel>
+                  <input type="text" class="form-control"  placeholder="Complemento" name="optional" ngModel>
                     </mt-input-container>
               </div>
             </div>
@@ -41,9 +38,9 @@
                 <p class="lead">Itens do Pedido:</p>
               </div>
              <mt-order-itens [itens]="cartItens()"
-                    (increaseQty)="increaseQty($event)"
-                    (decreaseQty)="decreaseQty($event)"
-                    (remove)="remove($event)">
+                             (increaseQty)="increaseQty($event)"
+                             (decreaseQty)="decreaseQty($event)"
+                             (remove)="remove($event)">
               </mt-order-itens>
             </div>
 
@@ -53,7 +50,7 @@
                 <p class="lead">Formas de Pagamento:</p>
 
                   <div class="form-group">
-                    <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
+                    <mt-radio [options]="paymentOptions" name="paymentOption" ngModel required></mt-radio>
                   </div>
 
               </div>
@@ -61,7 +58,9 @@
               <div class="col-sm-6 col-xs-12">
                 <p class="lead">Frete e Total:</p>
 
-                <mt-delivery-costs></mt-delivery-costs>
+                <mt-delivery-costs [delivery]="delivery"
+                                   [itensValue]="itemsValue()">
+                </mt-delivery-costs>
               </div>
               <!-- /.col -->
             </div>
@@ -70,8 +69,11 @@
 
           <div class="row">
             <div class="col-xs-12">
-              <a href="order-summary.html" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
-              </a>
+              <button (click)="checkOrder(form.value)" 
+                    [disabled]="!form.valid || cartItens().length === 0" 
+                    class="btn btn-success pull-right">
+                    <i class="fa fa-credit-card"></i> Concluir Pedido
+              </button>
             </div>
           </div>
 
