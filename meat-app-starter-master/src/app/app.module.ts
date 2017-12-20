@@ -9,7 +9,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from "app/header/header.component";
 import { HomeComponent } from "app/home/home.component";
-import { AboutComponent } from 'app/about/about.component';
 import { ROUTES } from "app/app.routes";
 import { RestaurantsComponent } from 'app/restaurants/restaurants.component';
 import { RestaurantComponent } from 'app/restaurants/restaurant/restaurant.component';
@@ -33,7 +32,6 @@ import { RatingComponent } from 'app/shared/rating/rating.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent,
     RestaurantsComponent,
     RestaurantComponent,
     RestaurantDetailComponent,
