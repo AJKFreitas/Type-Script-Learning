@@ -4,12 +4,18 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'app/order/order.service';
 import { Order, OrderItem } from 'app/order/order.model';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms/src/model';
+import { FormBuilder } from '@angular/forms/src/form_builder';
 
 @Component({
   selector: 'mt-order',
   templateUrl: './order.component.html',
 })
 export class OrderComponent implements OnInit {
+
+
+  orderForm: FormGroup
+
 
   delivery :number = 8
 
@@ -19,9 +25,20 @@ export class OrderComponent implements OnInit {
     {label:'Cartão Refeição', value:'REF'}
   ];
 
-  constructor(private orderService:OrderService, private router: Router) { }
+  constructor(private orderService:OrderService,
+               private router: Router,
+              private formBuider: FormBuilder) { }
 
   ngOnInit() {
+    this.orderForm = this.formBuider.group({
+      name:this.formBuider.control(''),
+      email:this.formBuider.control(''),
+      emailConfirmation:this.formBuider.control(''),
+      addresss: this.formBuider.control(''),
+      number:this.formBuider.control(''),
+      optional:this.formBuider.control(''),
+      paymentOptions:this.formBuider.control('')
+    })
   }
 
   itemsValue():number{
