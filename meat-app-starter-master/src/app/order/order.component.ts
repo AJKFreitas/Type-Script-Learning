@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'app/order/order.service';
 import { Order, OrderItem } from 'app/order/order.model';
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms/src/model';
-import { FormBuilder } from '@angular/forms/src/form_builder';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'mt-order',
@@ -34,10 +33,10 @@ export class OrderComponent implements OnInit {
       name:this.formBuider.control(''),
       email:this.formBuider.control(''),
       emailConfirmation:this.formBuider.control(''),
-      addresss: this.formBuider.control(''),
+      address: this.formBuider.control(''),
       number:this.formBuider.control(''),
       optional:this.formBuider.control(''),
-      paymentOptions:this.formBuider.control('')
+      paymentOption:this.formBuider.control('')
     })
   }
 
