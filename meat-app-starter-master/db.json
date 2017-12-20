@@ -482,6 +482,30 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "Ângelo Antônio De Freitas Santos",
+      "email": "ajkfreitas@gmail.com",
+      "emailConfirmation": "ajkfreitas@gmail.com",
+      "address": "Rua A",
+      "number": "143",
+      "optional": "casa",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "zlasagna"
+        },
+        {
+          "quantity": 1,
+          "menuId": "greensandwich"
+        },
+        {
+          "quantity": 1,
+          "menuId": "ceasar"
+        }
+      ],
+      "id": 7
     }
   ]
 }
