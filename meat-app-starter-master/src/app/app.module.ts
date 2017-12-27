@@ -17,7 +17,7 @@ import { MenuItemComponent } from 'app/restaurant-detail/menu-item/menu-item.com
 import { ReviewsComponent } from 'app/restaurant-detail/reviews/reviews.component';
 import { OrderSumaryComponent } from 'app/order-sumary/order-sumary.component';
 import { SharedModule } from 'app/shared/shared.module';
-
+import { PreloadAllModules } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -38,9 +38,9 @@ import { SharedModule } from 'app/shared/shared.module';
     BrowserModule,
     HttpModule,
     SharedModule.forRoot(),
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES,{preloadingStrategy:PreloadAllModules})
   ],
   providers: [CoreModule , {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
