@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from "app/header/header.component";
 import { HomeComponent } from "app/home/home.component";
-import { ROUTES } from "app/app.routes";
 import { RestaurantsComponent } from 'app/restaurants/restaurants.component';
 import { RestaurantComponent } from 'app/restaurants/restaurant/restaurant.component';
 import { RestaurantDetailComponent } from 'app/restaurant-detail/restaurant-detail.component';
@@ -18,6 +17,10 @@ import { ReviewsComponent } from 'app/restaurant-detail/reviews/reviews.componen
 import { OrderSumaryComponent } from 'app/order-sumary/order-sumary.component';
 import { SharedModule } from 'app/shared/shared.module';
 import { PreloadAllModules } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ROUTES } from "app/app.routes";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { PreloadAllModules } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     SharedModule.forRoot(),
     RouterModule.forRoot(ROUTES,{preloadingStrategy:PreloadAllModules})
