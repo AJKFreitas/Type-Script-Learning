@@ -530,6 +530,30 @@
         }
       ],
       "id": 8
+    },
+    {
+      "name": "Ângelo Antônio De Freitas Santos",
+      "email": "angelo@ang.com",
+      "emailConfirmation": "angelo@ang.com",
+      "address": "Rua A",
+      "number": "1891",
+      "optional": "casa",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 9
     }
   ]
 }
