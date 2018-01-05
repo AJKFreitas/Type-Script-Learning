@@ -7,9 +7,9 @@ import {trigger, state, style, transition, animate} from "@angular/animations";
   templateUrl: './menu-item.component.html',
   animations:[
     trigger('menuItemAppeared',[
-      state('ready',style({opacity:1})),
+      state('ready', style({opacity: 1})),
       transition('void => ready',[
-        style({opacity:0, transform:'translate(-30px, -20px)'}),
+        style({opacity: 0, transform: 'translate(-30px, -20px)'}),
         animate('300ms 0s ease-in')
       ])
     ])
@@ -17,7 +17,7 @@ import {trigger, state, style, transition, animate} from "@angular/animations";
 })
 export class MenuItemComponent implements OnInit {
 
-menuState = 'ready'
+  menuState = 'ready'
   @Input()  menuItem: MenuItem
   @Output() add = new EventEmitter()
 
