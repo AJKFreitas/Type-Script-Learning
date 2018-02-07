@@ -1,4 +1,3 @@
-<!-- INICIO DO CONTEUDO -->
 <section class="content-header">
   </section>
 
@@ -10,10 +9,9 @@
       <p> 
           <mt-rating (rated)="rated = true"></mt-rating>
       </p>
-      <p [hidden]="!rated">
+      <p *ngIf="!rated">
         Obrigado pela sua avaliação!
       </p>
     </div>
 
   </section>
-<!-- FIM DO CONTEUDO -->

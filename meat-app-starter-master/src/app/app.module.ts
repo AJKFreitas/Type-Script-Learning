@@ -1,4 +1,3 @@
-import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -20,6 +19,7 @@ import { PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ROUTES } from "app/app.routes";
+import { NotFoundComponent } from 'app/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { ROUTES } from "app/app.routes";
     MenuItemComponent,
     ReviewsComponent,
     OrderSumaryComponent,
+    NotFoundComponent
 
   ],
   imports: [
@@ -41,9 +42,11 @@ import { ROUTES } from "app/app.routes";
     BrowserAnimationsModule,
     HttpModule,
     SharedModule.forRoot(),
-    RouterModule.forRoot(ROUTES,{preloadingStrategy:PreloadAllModules})
+    RouterModule.forRoot(ROUTES,
+                        {preloadingStrategy:PreloadAllModules}
+                        )
   ],
-  providers: [CoreModule , {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [ {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

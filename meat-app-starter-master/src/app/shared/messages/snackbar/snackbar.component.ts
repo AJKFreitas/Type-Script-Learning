@@ -43,12 +43,4 @@ export class SnackbarComponent implements OnInit {
     }).switchMap(message => Observable.timer(3000))
       .subscribe(timer => this.snackVisibility = 'hidden')
   }
-  // ngOnInit() {
-  //   this.notificationService.notifier.subscribe(message=>{
-  //     this.message = message
-  //     this.snackVisibility = 'visible'
-  //     Observable.timer(3000).subscribe(timer => this.snackVisibility = 'hidden')
-  //   })
-  // }
-  
 }
